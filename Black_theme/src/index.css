@@ -1,0 +1,237 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; 
+  background: linear-gradient(135deg, #01050c, #18032c); 
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.toolbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  color: white;
+  background: rgba(31, 30, 30, 0.1);
+  border-radius: 0 0 20px 20px;
+  height: 50px;
+  margin-bottom: 30px;
+  transform: translateY(-10px);
+  transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+}
+.toolbar:hover{
+  background: rgba(31, 30, 30, 0.5);
+  box-shadow: 0px 5px 10px #ddd;
+  transform: translateY(0);
+
+}
+
+.toolbar-logo{
+  height: 28px;
+  width: auto;
+  margin-left:15px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.6s ease;
+}
+.toolbar-logo:hover{
+  background: #294e8e;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
+.home-toolbar{
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  inset: 10px;
+  gap: 0px;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  gap: 20px;
+
+}
+.home-toolbar li:hover{
+  text-decoration: underline;
+  transform: scale(1.2);
+
+}
+li{
+  padding: 10px;
+}
+
+
+
+.login-container {
+  
+  background: white;
+  top: 300px;
+  width: 400px;
+  height: 500px;
+  padding: 10px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+}
+
+.inner {
+
+  position: absolute;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.top {
+  inset: 10px;
+  border-radius: 10px;
+  background: #0e0d0d;
+  display: flex;
+  flex-direction: column;
+
+  z-index: 2;
+}
+.middle {
+  inset: 5px;
+  z-index: 1;
+  overflow: hidden;
+  filter: blur(8px);
+  border-radius: 10px;
+  
+}
+.middle::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#fcc520, #2f980c, #f40a0a,#0a58f4);
+  filter: blur(10px);
+  animation: spin 14s linear infinite;
+}
+.bottom {
+  inset: 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  filter: blur(15px);
+
+  z-index: 0;
+}
+.bottom::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#fcc520, #2f980c, #f40a0a,#0a58f4);
+  filter: blur(10px);
+  animation: spin 14s linear infinite;
+}
+
+
+
+
+.login-container h2 {
+  margin-bottom: 60px;
+  color: white;
+}
+
+
+.top input {
+  width: 80%;
+  padding: 10px;
+  margin: 8px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+
+.top button {
+  width: 80%;
+  padding: 10px;
+  background: #3b82f6;
+  margin-top: 8px;
+  color: white;
+  border: none;
+  border-radius: 5px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container button:hover {
+  background: #2563eb;
+}
+
+
+.login-container a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #3b82f6;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+.profile.icon {
+  color: rgb(229, 228, 218);
+  position: relative;
+  margin-left: 3px;
+  margin-top: 11px;
+  width: 29px;
+  height: 20px;
+  border-left: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  border-top: solid 2px currentColor;
+  border-bottom: solid px transparent;
+  border-radius: 12px 12px 0 0;
+}
+
+.profile.icon:before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: -18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: solid 2px currentColor;
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 15px;
+  text-emphasis: bold;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+  position: fixed;   
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+@keyframes spin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
